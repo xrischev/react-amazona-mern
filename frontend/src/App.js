@@ -2,11 +2,9 @@ function App() {
   return (
     <div className="App">
       <header>
-          <a href="/">amazona</a>
+        <a href="/">amazona</a>
       </header>
-        <main>
-            list products
-        </main>
+      <main>list products 123</main>
     </div>
   );
 }
