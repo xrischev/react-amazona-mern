@@ -3,11 +3,24 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {HelmetProvider} from 'react-helmet-async'
+import {StoreProvider} from "./Store";
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+      <StoreProvider>
+          <HelmetProvider>
+              <PayPalScriptProvider deferLoading={true}>
+                  {/*<PayPalButtons />*/}
+                  <App />
+              </PayPalScriptProvider>
+
+          </HelmetProvider>
+      </StoreProvider>
   </React.StrictMode>
 );
 
